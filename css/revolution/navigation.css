@@ -2309,10 +2309,10 @@ website:    http://www.themepunch.com
     position:relative;
 }
 .zeus.tparrows.tp-leftarrow:before {
-    content: "\e824";
+    content: "←"
 }
 .zeus.tparrows.tp-rightarrow:before {
-    content: "\e825";
+    content: "→";
 }
 
 .zeus .tp-title-wrap {
