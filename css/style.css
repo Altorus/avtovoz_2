@@ -911,6 +911,11 @@ div.aligncenter,
     line-height: 0;
     text-indent: -9999px;
 }
+.logo img,
+.footer-logo img{
+    width: 200px;
+}
+
 .site-logo .hide-logo {
     display: none;
 }
@@ -6343,6 +6348,7 @@ ul.service-menu .children li:last-child {
 .fh-testimonials-carousel .testi-wrapper {
     padding: 115px 0;
     background-color: #0c1239;
+    background-repeat: no-repeat;
 }
 .fh-testimonials-carousel.column-1 .testi-item {
     width: 50%;

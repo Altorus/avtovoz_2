@@ -439,6 +439,7 @@
 .footer-widgets {
     background-color: #0c1239;
     background-image: url(../images/bg/footer-bg.jpg);
+    background-repeat: no-repeat;
 }
 
 .site-footer {
