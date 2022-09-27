@@ -125,7 +125,7 @@
                                 </li>
                                 <li class="extra-menu-item menu-item-button-link">
                                     <!--                                    #задача сделать модалку-->
-                                    <a href="request-a-quote.html" class="fh-btn btn">Заказать звонок</a>
+                                    <a href="request-a-quote.html" class="fh-btn btn" data-toggle="modal" data-target="#exampleModal">Заказать звонок</a>
                                 </li>
                             </ul>
                         </nav>
@@ -499,6 +499,29 @@
     </div>
     <!-- Welcome sec   end-->
 
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Заказать обратный звонок</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="#" method="post">
+                        <input type="text" id="phone" class="form-input" placeholder="Ваш номер телефона">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-custom outline" data-dismiss="modal">Закрыть</button>
+                    <button type="button" class="btn-custom">Отправить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- special services -->
     <section class="special_services bluebg secpadd">
         <div class="container">
@@ -690,7 +713,7 @@
 
 
                                     <label for="universal">
-                                        <input type="radio" id="universal" name="auto" value="Универсал"><img
+                                        <  type="radio" id="universal" name="auto" value="Универсал"><img
                                             src="images/cars-select/universal.png"
                                             alt="">Универсал</label>
 
@@ -732,10 +755,10 @@
                                 </div>
                                 <div class="row btn-bar">
                                     <div class="col-md-3">
-                                        <div class="btn next">Подтвердить и продолжить</div>
+                                        <div class="btn-custom next">Подтвердить и продолжить</div>
                                     </div>
                                     <div class="col-md-3">
-                                        <div class="btn outline skip">Пропустить этот шаг</div>
+                                        <div class="btn-custom outline skip">Пропустить этот шаг</div>
                                     </div>
                                 </div>
                             </div>
@@ -757,7 +780,7 @@
                                 </div>
                                 <div class="row btn-bar">
                                     <div class="col-md-3">
-                                        <div class="btn done-order">Подтвердить и продолжить</div>
+                                        <div class="btn-custom done-order">Подтвердить и продолжить</div>
                                     </div>
                                 </div>
                             </div>
@@ -765,7 +788,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <h6>Вы хотите перевезти:</h6>
-                                        <p class="results" id="result"></p>
+                                        <p class="results" id="result">Вы не заполнили важные поля</p>
                                     </div>
                                 </div>
                                 <div class="row section">
@@ -786,7 +809,7 @@
                                         <span class="areement-desc">Согласен на обработку персональных данных</span>
                                     </div>
                                     <div class="col-md-12 col-section">
-                                        <div class="btn">Подтвердить и продолжить</div>
+                                        <div class="btn-custom">Подтвердить и продолжить</div>
                                     </div>
                                     <div class="col-md-12 col-section">
                                         <p>* В течение 5 минут с Вами свяжется наш специалист и проинформирует вас о

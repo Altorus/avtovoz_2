@@ -673,9 +673,14 @@
         if (typeAuto != ''){
             $('#result').html(`Вы хотите доставить ${typeAuto} из ${fromCity} в ${toCity}. Желаемая дата отправки-${dateShipping}`)
         }else{
+            $('#result').html('Вы не заполнили важные поля')
             alert("Вы не выбрали тип автомобиля")
         }
     }
+
+    $('#myModal').on('shown.bs.modal', function () {
+        $('#myInput').trigger('focus')
+    })
 
 
     // mask for phone input

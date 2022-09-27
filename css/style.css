@@ -1494,7 +1494,7 @@ div.aligncenter,
     transform: translate(-50%, 0);
     width: 100%;
     position: fixed;
-    z-index: 9999;
+    z-index: 999;
     background-color: #fff;
 }
 
@@ -8361,7 +8361,8 @@ input[type="radio"] {
 }
 
 .col-md-6 .form-input,
-.col-md-4 .form-input {
+.col-md-4 .form-input,
+.modal-body form .form-input{
     border: none;
     padding: 10px;
     outline: none;
@@ -8382,26 +8383,28 @@ input[type="radio"] {
     color: #28a745;
 }
 
-.btn {
+.btn-custom {
     padding: 10px 20px;
     background-color: #28a745;
     color: #fff;
     transition: all .2s ease-in-out;
+    border: none;
 }
 
-.btn:hover {
+.btn-custom:hover {
     background-color: #fff;
     color: #28a745;
     outline: 1px solid #28a745;
 }
 
-.btn.outline {
+.btn-custom.outline {
     background-color: #fff;
     color: #28a745;
     outline: 1px solid #28a745;
+    border: none;
 }
 
-.btn.outline:hover {
+.btn-custom .outline:hover {
     padding: 10px 20px;
     background-color: #28a745;
     color: #fff;
