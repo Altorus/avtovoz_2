@@ -631,6 +631,8 @@
             $('.form-order.active').removeClass('active');
             content.addClass('active');
             return false
+        }else{
+            alert('Заполните обязательные поля')
         }
     })
     $('.skip').click(() => {
@@ -658,6 +660,8 @@
             content.addClass('active');
             readyOrder()
             return false
+        }else{
+            alert('Заполните обязательные поля')
         }
     })
 
@@ -666,7 +670,11 @@
         let fromCity = $('.from').val()
         let toCity = $('.to').val()
         let dateShipping = $("#datepicker").val();
-        $('#result').html(`Вы хотите доставить ${typeAuto} из ${fromCity} в ${toCity}. Желаемая дата отправки-${dateShipping}`)
+        if (typeAuto != ''){
+            $('#result').html(`Вы хотите доставить ${typeAuto} из ${fromCity} в ${toCity}. Желаемая дата отправки-${dateShipping}`)
+        }else{
+            alert("Вы не выбрали тип автомобиля")
+        }
     }
 
 
