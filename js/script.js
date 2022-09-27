@@ -586,38 +586,90 @@
     mainwindow.on('resize', function () {
     });
 
-    $('input[name="auto"]').click(()=>{
+// Tab-main
+    $('#order-form ul li').click(function () {
+        var id = $(this).attr('data-tab'),
+            content = $('.form-order[data-tab="' + id + '"]');
 
+        $('#order-form ul li.active').removeClass('active');
+        $(this).addClass('active');
+
+        $('.form-order.active').removeClass('active');
+        content.addClass('active');
+    });
+
+    $('.select-car label').click(function () {
+        let content = $('.form-order[data-tab="2"]');
+
+        $(".select-car label").addClass("hidden");
+        $(this).removeClass("hidden");
+        $(".select-car span").addClass("action");
+
+        $('#order-form ul li.active').removeClass('active');
+        $('#order-form ul li[data-tab="2"]').addClass('active');
+
+        $('.select-car').addClass('select');
+        $('.form-order.active').removeClass('active');
+        content.addClass('active');
+        return false
     })
 
-
-    //tabs
-    $(function  () {
-        var tab = $('#tabs .tabs-items > div');
-        tab.hide().filter(':first').show();
-
-        // Клики по вкладкам.
-        $('#tabs .tabs-nav a').click(function () {
-            if(!$(this).hasClass('lock')){
-                tab.hide();
-                tab.filter(this.hash).show();
-                $('#tabs .tabs-nav a').removeClass('active');
-                $(this).addClass('active');
-            }
-            return false;
-        }).filter(':first').click();
-
-        // Клики по якорным ссылкам.
-        $('.tabs-target').click(function () {
-            $('#tabs .tabs-nav a[href=' + $(this).attr('href') + ']').click();
-        });
-
-        // Отрытие вкладки из хеша URL
-        if (window.location.hash) {
-            $('#tabs-nav a[href=' + window.location.hash + ']').click();
-            window.scrollTo(0, $("#".window.location.hash).offset().top);
-        }
+    $(".select-car span").click(function () {
+        $(this).toggleClass("action");
+        $(".select-car label").toggleClass("hidden");
+        $('.select-car').removeClass('select')
     });
+
+    $('.next').click(() => {
+        let brand = $('.brand-car').val()
+        let model = $('.model-car').val()
+        if (brand != "" && model != "") {
+            let content = $('.form-order[data-tab="3"]');
+
+            $('#order-form ul li.active').removeClass('active');
+            $('#order-form ul li[data-tab="3"]').addClass('active');
+
+            $('.form-order.active').removeClass('active');
+            content.addClass('active');
+            return false
+        }
+    })
+    $('.skip').click(() => {
+        let content = $('.form-order[data-tab="3"]');
+
+        $('#order-form ul li.active').removeClass('active');
+        $('#order-form ul li[data-tab="3"]').addClass('active');
+
+        $('.form-order.active').removeClass('active');
+        content.addClass('active');
+        return false
+    })
+
+    $('.done-order').click(()=>{
+        let from = $('.from').val()
+        let to = $('.to').val()
+        let dateShipping = $("#datepicker").val();
+        if (from != "" && to != "" && dateShipping != "") {
+            let content = $('.form-order[data-tab="4"]');
+
+            $('#order-form ul li.active').removeClass('active');
+            $('#order-form ul li[data-tab="4"]').addClass('active');
+
+            $('.form-order.active').removeClass('active');
+            content.addClass('active');
+            readyOrder()
+            return false
+        }
+    })
+
+    function readyOrder() {
+        let typeAuto = $('input[name="auto"]:checked').val()
+        console.log(typeAuto)
+        let fromCity = $('.from').val()
+        let toCity = $('.to').val()
+        let dateShipping = $("#datepicker").val();
+        $('#result').html(`Вы хотите доставить ${typeAuto} из ${fromCity} в ${toCity}. Желаемая дата отправки-${dateShipping}`)
+    }
 
 
     // mask for phone input

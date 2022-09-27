@@ -661,18 +661,16 @@
                         <h2>Оставить заявку на перевозку</h2>
                     </div>
                     <form method="post" id="order-form">
-                        <div id="tabs">
-                            <!-- Кнопки -->
-                            <ul class="tabs-nav">
-                                <li><a href="#tab-1">Шаг 1: выберите тип транспорта</a></li>
-                                <li><a href="#tab-2" class="lock">Шаг 2: Модель и марка транспорта</a></li>
-                                <li><a href="#tab-3" class="lock">Шаг 3: Информация о перевозке</a></li>
-                                <li><a href="#tab-4" class="lock">Шаг 4: Стоимость перевозки</a></li>
-                            </ul>
 
-                            <!-- Контент -->
-                            <div class="tabs-items">
-                                <div class="tabs-item select-car" id="tab-1">
+                        <ul class="nowrap">
+                            <li data-tab='1' class="active">Шаг 1: выберите тип транспорта</li>
+                            <li data-tab='2'>Шаг 2: Модель и марка транспорта</li>
+                            <li data-tab='3'>Шаг 3: Информация о перевозке</li>
+                            <li data-tab='4'>Шаг 4: Стоимость перевозки</li>
+                        </ul>
+                        <div class="form-order-section">
+                            <div class="form-order active" data-tab='1'>
+                                <div class="select-car" id="tab-1">
 
                                     <label for="sedan">
                                         <input type="radio" id="sedan" name="auto" value="Седан" required>
@@ -715,81 +713,84 @@
                                     <span class="edit-btn">Изменить</span>
 
                                 </div>
-                                <div class="tabs-item" id="tab-2">
-                                    <p class="desc-block">Для более точного расчета стоимости укажите модель и марку
-                                        вашего транспорта. Вы можете пропустить этот шаг.</p>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <input type="text" placeholder="Марка автомобиля"
-                                                   class="form-input brand-car">
-                                            <span class="desc">Например BMW</span>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <input type="text" placeholder="Модель автомобиля"
-                                                   class="form-input model-car">
-                                            <span class="desc">Например series 3</span>
-                                        </div>
+                            </div>
+                            <div class="form-order form-edit" data-tab='2'>
+                                <p class="desc-block">Для более точного расчета стоимости укажите модель и марку
+                                    вашего транспорта. Вы можете пропустить этот шаг.</p>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Марка автомобиля"
+                                               class="form-input brand-car">
+                                        <span class="desc">Например BMW</span>
                                     </div>
-                                    <div class="row btn-bar">
-                                        <div class="col-md-3">
-                                            <div class="btn">Подтвердить и продолжить</div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="btn outline">Пропустить этот шаг</div>
-                                        </div>
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Модель автомобиля"
+                                               class="form-input model-car">
+                                        <span class="desc">Например series 3</span>
                                     </div>
                                 </div>
-                                <div class="tabs-item" id="tab-3">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <input type="text" placeholder="Откуда" class="form-input from">
-                                            <span class="desc">Например Краснодар</span>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <input type="text" placeholder="Куда" class="form-input to">
-                                            <span class="desc">Например Чебоксары</span>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <input type="text" placeholder="Выберите дату отправки" class="form-input"
-                                                   name="date"
-                                                   id="datepicker" required>
-                                        </div>
+                                <div class="row btn-bar">
+                                    <div class="col-md-3">
+                                        <div class="btn next">Подтвердить и продолжить</div>
                                     </div>
-                                    <div class="row btn-bar">
-                                        <div class="col-md-3">
-                                            <div class="btn">Подтвердить и продолжить</div>
-                                        </div>
+                                    <div class="col-md-3">
+                                        <div class="btn outline skip">Пропустить этот шаг</div>
                                     </div>
                                 </div>
-                                <div class="tabs-item" id="tab-4">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <h6>Вы хотите перевезти:</h6>
-                                            <p class="results" id="result">e</p>
-                                        </div>
+                            </div>
+                            <div class="form-order form-edit" data-tab='3'>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <input type="text" placeholder="Откуда" class="form-input from">
+                                        <span class="desc">Например Краснодар</span>
                                     </div>
-                                    <div class="row section">
-                                        <div class="col-md-12 col-section">
-                                            <h6>Узнайте стоимость прямо сейчас</h6>
-                                        </div>
-                                        <div class="col-md-6 col-section">
-                                            <input type="text" placeholder="Имя" class="form-input from">
-                                        </div>
-                                        <div class="col-md-6 col-section">
-                                            <input type="text" id="phone" placeholder="Номер телефона" class="form-input from">
-                                        </div>
+                                    <div class="col-md-4">
+                                        <input type="text" placeholder="Куда" class="form-input to">
+                                        <span class="desc">Например Чебоксары</span>
                                     </div>
-                                    <div class="row section">
-                                        <div class="col-md-12 col-section">
-                                            <input type="checkbox" name="areement" id="areement">
-                                            <span class="areement-desc">Согласен на обработку персональных данных</span>
-                                        </div>
-                                        <div class="col-md-12 col-section">
-                                            <div class="btn">Подтвердить и продолжить</div>
-                                        </div>
-                                        <div class="col-md-12 col-section">
-                                            <p>* В течение 5 минут с Вами свяжется наш специалист и проинформирует вас о стоимости перевозки, а также ответит на все интересующие Вас вопросы.</p>
-                                        </div>
+                                    <div class="col-md-4">
+                                        <input type="text" placeholder="Выберите дату отправки" class="form-input"
+                                               name="date"
+                                               id="datepicker" required>
+                                    </div>
+                                </div>
+                                <div class="row btn-bar">
+                                    <div class="col-md-3">
+                                        <div class="btn done-order">Подтвердить и продолжить</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-order form-edit" data-tab='4'>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h6>Вы хотите перевезти:</h6>
+                                        <p class="results" id="result"></p>
+                                    </div>
+                                </div>
+                                <div class="row section">
+                                    <div class="col-md-12 col-section">
+                                        <h6>Узнайте стоимость прямо сейчас</h6>
+                                    </div>
+                                    <div class="col-md-6 col-section">
+                                        <input type="text" placeholder="Имя" class="form-input from">
+                                    </div>
+                                    <div class="col-md-6 col-section">
+                                        <input type="text" id="phone" placeholder="Номер телефона"
+                                               class="form-input from">
+                                    </div>
+                                </div>
+                                <div class="row section">
+                                    <div class="col-md-12 col-section">
+                                        <input type="checkbox" name="areement" id="areement">
+                                        <span class="areement-desc">Согласен на обработку персональных данных</span>
+                                    </div>
+                                    <div class="col-md-12 col-section">
+                                        <div class="btn">Подтвердить и продолжить</div>
+                                    </div>
+                                    <div class="col-md-12 col-section">
+                                        <p>* В течение 5 минут с Вами свяжется наш специалист и проинформирует вас о
+                                            стоимости перевозки, а также ответит на все интересующие Вас
+                                            вопросы.</p>
                                     </div>
                                 </div>
                             </div>
@@ -1025,7 +1026,8 @@
                         <div class="entry-summary">
                             <div class="entry-meta clearfix">
                                 <span class="meta author">by <a href="#">steelthemes</a></span>
-                                <span class="meta cat-links"><a href="#">Entrepreneurs</a>, <a href="#">Warehousing</a></span>
+                                <span class="meta cat-links"><a href="#">Entrepreneurs</a>, <a
+                                        href="#">Warehousing</a></span>
                             </div>
                             <h2 class="entry-title"><a href="#">We ensures you best the quality services</a></h2>
                             <div class="entry-footer">
@@ -1064,7 +1066,8 @@
                         <div class="entry-summary">
                             <div class="entry-meta clearfix">
                                 <span class="meta author">by <a href="#">steelthemes</a></span>
-                                <span class="meta cat-links"><a href="#">Manufacturing</a>, <a href="#">Warehousing</a></span>
+                                <span class="meta cat-links"><a href="#">Manufacturing</a>, <a
+                                        href="#">Warehousing</a></span>
                             </div>
                             <h2 class="entry-title"><a href="#">Delivering logistic services</a></h2>
                             <div class="entry-footer">
