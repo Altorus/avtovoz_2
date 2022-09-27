@@ -598,11 +598,11 @@
         content.addClass('active');
     });
 
-    $('.select-car label').click(function () {
+    $('input[name="auto"]').on('click', function () {
         let content = $('.form-order[data-tab="2"]');
 
         $(".select-car label").addClass("hidden");
-        $(this).removeClass("hidden");
+        $($(this).parent()).removeClass("hidden");
         $(".select-car span").addClass("action");
 
         $('#order-form ul li.active').removeClass('active');
@@ -611,7 +611,6 @@
         $('.select-car').addClass('select');
         $('.form-order.active').removeClass('active');
         content.addClass('active');
-        return false
     })
 
     $(".select-car span").click(function () {
@@ -664,7 +663,6 @@
 
     function readyOrder() {
         let typeAuto = $('input[name="auto"]:checked').val()
-        console.log(typeAuto)
         let fromCity = $('.from').val()
         let toCity = $('.to').val()
         let dateShipping = $("#datepicker").val();
