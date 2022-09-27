@@ -766,6 +766,10 @@
 }
 
 @media (max-width: 991px) {
+    .tabs-nav{
+        flex-direction: column;
+    }
+
     .single-right .blog-sidebar .factoryhub-widget,
     .single-left .blog-sidebar .factoryhub-widget {
         padding-right: 0;

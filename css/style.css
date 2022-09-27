@@ -281,7 +281,7 @@ input[type="datetime"]:focus,
 input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus {
-    border-color: #222;
+    border-color: #28a745;
 }
 /*--------------------------------------------------------------
    Typography
@@ -351,11 +351,11 @@ img {
     max-width: 100%;
     height: auto;
 }
-input[type=text],
-textarea {
-    border: 1px solid #555;
-    background: #fff;
-}
+/*input[type=text],*/
+/*textarea {*/
+/*    border: 1px solid #555;*/
+/*    background: #fff;*/
+/*}*/
 blockquote {
     font-size: 16px;
     font-style: italic;
@@ -525,7 +525,7 @@ table tr th {
 .fh-form input[type="email"]:focus,
 .fh-form select:focus {
     outline: none;
-    border-color: #a8a8a8;
+    border-color: #28a745;
 }
 .fh-form textarea {
     height: 175px;
@@ -7016,4 +7016,164 @@ ul.service-menu .children li:last-child {
     font-weight: 400;
     font-style: normal;
     margin: 0;
+}
+
+/** tabs **/
+#tabs {
+    margin: 10px 0;
+}
+.tabs-nav {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+.tabs-nav li {
+    padding: 0;
+    list-style: none;
+}
+.tabs-nav a {
+    display: block;
+    padding: 10px 20px;
+    background: #fbfbfb;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+    color: #999;
+}
+
+.tabs-nav a.active {
+    background: #fff;
+    color: #28a745;
+}
+.tabs-items {
+    border: 1px solid #ccc;
+    border-radius: 0 5px 5px 5px;
+    background: #fff;
+    margin: -1px 0 0 0;
+}
+.tabs-item {
+    padding: 15px;
+}
+
+.select-car input{
+    display: none;
+}
+
+.select-car label{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #28a745;
+    border-radius: 10px;
+    padding: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.select-car{
+    display: grid;
+    transition: all .3s ease-in-out;
+    grid-template-columns: repeat(auto-fill, minmax(230px, auto));
+    gap: 20px;
+    padding: 1rem 1.25rem;
+}
+
+.select-car label:hover{
+    cursor: pointer;
+    background-color: #28a745;
+    color: #fff;
+}
+
+.select-car label img{
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.select-car.select{
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.edit-btn{
+    display: none;
+}
+
+.edit-btn.active{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in;
+}
+
+.col-md-6 .form-input,
+.col-md-4 .form-input{
+    border: none;
+    padding: 10px;
+    outline: none;
+    border-bottom: 1px solid #111;
+    transition: all .2s ease-in-out;
+    background: #fff;
+}
+
+.col-md-6 .desc,
+.col-md-4 .desc{
+    display: block;
+    margin-top: 5px;
+    transition: all .2s ease-in-out;
+}
+
+.col-md-6 .form-input:focus + .desc,
+.col-md-4 .form-input:focus + .desc{
+    color: #28a745;
+}
+
+.btn{
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    transition: all .2s ease-in-out;
+}
+
+.btn:hover{
+    background-color: #fff;
+    color: #28a745;
+    outline: 1px solid #28a745;
+}
+
+.btn.outline{
+    background-color: #fff;
+    color: #28a745;
+    outline: 1px solid #28a745;
+}
+
+.btn.outline:hover{
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    transition: all .2s ease-in-out;
+}
+
+.btn-bar{
+    margin-top: 10px;
+}
+
+.desc-block{
+    color: #a0a0a0;
+}
+
+.results{
+    padding-bottom: 10px;
+    border-bottom: 1px solid #bdbdbd;
+}
+
+.row.section{
+    margin: 15px 0;
+}
+
+.row .col-section{
+    margin: 10px 0;
+}
+
+#phone{
+    outline: none;
 }
