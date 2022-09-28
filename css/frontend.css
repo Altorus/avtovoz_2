@@ -406,7 +406,7 @@
     backgrpund-size:cover;
     padding:80px 0;
 }
-.homecounts h2 {
+.homecounts .h2 {
     color: #fff;
     font-size: 48px;
     font-weight: 600;
@@ -461,23 +461,23 @@
 }
 
 .welcomesec-2 .intro-hp2 {width: 60%; margin: 0 auto; text-align: center;}
-.welcomesec-2 .intro-hp2 h4{font-size: 30px; margin: 0; color: #fff; font-weight: 400;}
+.welcomesec-2 .intro-hp2 .h4{font-size: 30px; margin: 0; color: #fff; font-weight: 400;}
 .contact_services{
     background: #0c1239 url(../images/bg/bg-2.jpg) center top no-repeat;
     bacground-size:cover;
 }
 
-.contact_servbox h4 {
+.contact_servbox .h4 {
     margin: 0;
     font-size: 30px;
     color: #fff;
     font-weight: 400;
 }
-.contact_servbox h3 {margin: 0;
+.contact_servbox .h3 {margin: 0;
     font-size: 48px;
     color: #fff;
     font-weight: 400;}
-.contact_servbox h2 {margin: 0;
+.contact_servbox .h2 {margin: 0;
     font-size: 60px;
     font-weight: 400;}
 .contact_servbox p{color: #dde2fc;}
@@ -517,7 +517,7 @@
 
 
 .homeserv4{background:#0032ab url(../images/bg/service-bg-4.jpg) center top no-repeat;padding:70px 0 180px;text-align:center;}
-.homeserv4 h4{font-size: 36px; margin: 0; color: #fff; font-weight: 400;margin-bottom:25px;}
+.homeserv4 .h4{font-size: 36px; margin: 0; color: #fff; font-weight: 400;margin-bottom:25px;}
 .homeserv4 p{width: 70%; margin: 0 auto; text-align: center; font-size: 24px; color: #fff; font-weight: 300;margin-bottom:35px;}
 
 
@@ -527,7 +527,7 @@
     padding-bottom:60px;
 }
 .homeserv-4 .row{margin-top: -80px;}
-.header-v4  .fh-section-title h2 {
+.header-v4  .fh-section-title .h2 {
     font-size: 30px;
 }
 
@@ -571,9 +571,9 @@
 .allservsec .fh-service.style-bordered .summary {
     padding: 25px 20px;
 }
-.fh-section-title.f30  h2{font-size:30px;}
-.fh-section-title.f25  h2{font-size:25px;}
-.fh-section-title.f20  h2{font-size:20px;}
+.fh-section-title.f30  .h2{font-size:30px;}
+.fh-section-title.f25  .h2{font-size:25px;}
+.fh-section-title.f20  .h2{font-size:20px;}
 
 .partener_slide2 .partner-item {
     border-width: 1px;

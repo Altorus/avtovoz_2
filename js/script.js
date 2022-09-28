@@ -596,6 +596,7 @@
 
         $('.form-order.active').removeClass('active');
         content.addClass('active');
+        validateInputs()
     });
 
     $('input[name="auto"]').on('click', function () {
@@ -604,6 +605,7 @@
         $(".select-car label").addClass("hidden");
         $($(this).parent()).removeClass("hidden");
         $(".select-car span").addClass("action");
+        $('#order-form ul li:nth-of-type(1)').addClass('done');
 
         $('#order-form ul li.active').removeClass('active');
         $('#order-form ul li[data-tab="2"]').addClass('active');
@@ -611,10 +613,13 @@
         $('.select-car').addClass('select');
         $('.form-order.active').removeClass('active');
         content.addClass('active');
+        $('#order-form ul li:nth-of-type(1)').removeClass('warning')
     })
 
     $(".select-car span").click(function () {
         $(this).toggleClass("action");
+        $('input[name="auto"]').prop('checked', false);
+
         $(".select-car label").toggleClass("hidden");
         $('.select-car').removeClass('select')
     });
@@ -631,13 +636,14 @@
             $('.form-order.active').removeClass('active');
             content.addClass('active');
             return false
-        }else{
+        } else {
             alert('Заполните обязательные поля')
         }
     })
     $('.skip').click(() => {
         let content = $('.form-order[data-tab="3"]');
 
+        $('#order-form ul li.active').addClass('done');
         $('#order-form ul li.active').removeClass('active');
         $('#order-form ul li[data-tab="3"]').addClass('active');
 
@@ -646,7 +652,7 @@
         return false
     })
 
-    $('.done-order').click(()=>{
+    $('.done-order').click(() => {
         let from = $('.from').val()
         let to = $('.to').val()
         let dateShipping = $("#datepicker").val();
@@ -654,13 +660,14 @@
             let content = $('.form-order[data-tab="4"]');
 
             $('#order-form ul li.active').removeClass('active');
+            $('#order-form ul li:nth-of-type(3)').addClass('done');
             $('#order-form ul li[data-tab="4"]').addClass('active');
 
             $('.form-order.active').removeClass('active');
             content.addClass('active');
             readyOrder()
             return false
-        }else{
+        } else {
             alert('Заполните обязательные поля')
         }
     })
@@ -670,13 +677,21 @@
         let fromCity = $('.from').val()
         let toCity = $('.to').val()
         let dateShipping = $("#datepicker").val();
-        if (typeAuto != ''){
+        if (typeAuto !== undefined) {
             $('#result').html(`Вы хотите доставить ${typeAuto} из ${fromCity} в ${toCity}. Желаемая дата отправки-${dateShipping}`)
-        }else{
+        } else {
             $('#result').html('Вы не заполнили важные поля')
             alert("Вы не выбрали тип автомобиля")
         }
     }
+
+    function validateInputs(item) {
+        let typeAuto = $('input[name="auto"]:checked').val()
+        if (typeAuto === undefined) {
+            $('#order-form ul li:nth-of-type(1)').addClass('warning')
+        }
+    }
+
 
     $('#myModal').on('shown.bs.modal', function () {
         $('#myInput').trigger('focus')

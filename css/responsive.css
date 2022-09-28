@@ -80,7 +80,7 @@
     body .fh-service-box-2.box-style-2 .box-header .fh-icon {
         display: none;
     }
-    body .fh-service-box-2.box-style-2 h4,
+    body .fh-service-box-2.box-style-2 .h4,
     body .fh-service-box-2.box-style-2 .box-content {
         -webkit-transform: translateY(0);
         -ms-transform: translateY(0);
@@ -129,7 +129,7 @@
         padding-top: 0;
         padding-bottom: 20px;
     }
-    body .fh-icon-box.style-3 h4,
+    body .fh-icon-box.style-3 .h4,
     body .fh-icon-box.style-3 .desc {
         padding-left: 0;
     }
@@ -269,6 +269,10 @@
     /*--------------------------------------------------------------
       Blog
       --------------------------------------------------------------*/
+    #order-form ul{
+        flex-direction: column;
+    }
+
     .page-header .header-title {
         padding-top: 90px;
         padding-bottom: 90px;
@@ -303,7 +307,7 @@
         line-height: 30px;
     }
     .tparrows {display:none!important;}
-    .contact_servbox h2 {
+    .contact_servbox .h2 {
         font-size: 38px;
     }
 }
@@ -335,7 +339,7 @@
     /*--------------------------------------------------------------
       Shortcode
       --------------------------------------------------------------*/
-    .fh-section-title h2 {
+    .fh-section-title .h2 {
         font-size: 30px !important;
     }
     /*--------------------------------------------------------------
@@ -531,7 +535,7 @@
     body .fh-testimonials {
         padding-bottom: 30px;
     }
-    body .project-inner .project-summary h2 {
+    body .project-inner .project-summary .h2 {
         font-size: 20px;
     }
     body .project-inner .project-cat a {
@@ -735,7 +739,7 @@
     body .fh-service-2.style-2 .service-content .content-bonus {
         padding: 20px;
     }
-    body .fh-service-2.style-2 .service-content .content-bonus h2 {
+    body .fh-service-2.style-2 .service-content .content-bonus .h2 {
         padding-top: 15px;
     }
     body .fh-latest-project .item-project .project-summary {
@@ -745,7 +749,7 @@
         background-color: #73b21a;
         opacity: 1;
     }
-    body .fh-latest-project .item-project .project-summary h3 {
+    body .fh-latest-project .item-project .project-summary .h3 {
         font-size: 18px;
         margin-bottom: 0;
     }
@@ -1271,8 +1275,8 @@
         width: 100%;
     }
     .page-header .header-title h1,
-    div.fh-section-title h2,
-    div.fh-testimonials h3 {
+    div.fh-section-title .h2,
+    div.fh-testimonials .h3 {
         font-size: 26px;
     }
     .fh-service .item-service {
