@@ -469,6 +469,9 @@ table tr th {
     padding-bottom: 80px;
 }
 
+.steps-form{
+    display: flex;
+}
 
 @-webkit-keyframes fadeIn {
     from {
@@ -8273,12 +8276,21 @@ ul.service-menu .children li:last-child {
 /*tabs*/
 
 .form-order {
-    display: none;
+    overflow: hidden;
+    max-height: 0;
+    padding: 5px;
+    transition: 0.5s ease-out;
 }
 
 .form-order.active {
-    display: block;
+    max-height: 100vh;
+    transition: 0.5s ease-in;
 }
+
+/*.form-order .btn-custom.outline{*/
+/*    margin-bottom: 5px;*/
+/*    margin-right: 5px;*/
+/*}*/
 
 #order-form ul {
     padding: 0;
@@ -8286,6 +8298,11 @@ ul.service-menu .children li:last-child {
     border-bottom: 1px solid gray;
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
+}
+
+.form-car{
+    margin-left: 80px;
 }
 
 #order-form ul li {
@@ -8399,6 +8416,7 @@ input[type="radio"] {
 }
 
 .btn-custom {
+    text-align: center;
     padding: 10px 20px;
     background-color: #28a745;
     color: #fff;

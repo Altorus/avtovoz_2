@@ -113,6 +113,11 @@
         padding-left: 15px;
         padding-right: 15px;
     }
+
+    .form-order.active{
+        max-height: 1000px;
+    }
+
     .navbar-icon {
         right: 15px;
     }
@@ -295,6 +300,13 @@
     }
     .header-transparent .page-header .header-title {
         padding-top: 190px;
+    }
+    .form-car{
+        margin: 0;
+    }
+
+    .steps-form{
+        flex-direction: column;
     }
     /*--------------------------------------------------------------
       Footer
