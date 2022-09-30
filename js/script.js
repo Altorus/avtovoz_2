@@ -614,7 +614,16 @@
         $('.form-order.active').removeClass('active');
         content.addClass('active');
         $('#order-form ul li:nth-of-type(1)').removeClass('warning')
+        scrollBlock()
     })
+
+    let heightHeader = $('#masthead').height() + 60
+        // fixed_offset = $('.main-bar').height() + 10;
+    function scrollBlock() {
+        $('html, body').animate({scrollTop: $('.form-order-section').offset().top - heightHeader}, 1000);
+
+        console.log($('.form-order[data-tab=2]').offset().top - heightHeader)
+    }
 
     $(".select-car span").click(function () {
         $(this).toggleClass("action");
@@ -635,6 +644,7 @@
 
             $('.form-order.active').removeClass('active');
             content.addClass('active');
+            scrollBlock()
             return false
         } else {
             alert('Заполните обязательные поля')
@@ -649,6 +659,7 @@
 
         $('.form-order.active').removeClass('active');
         content.addClass('active');
+        scrollBlock()
         return false
     })
 
@@ -666,6 +677,7 @@
             $('.form-order.active').removeClass('active');
             content.addClass('active');
             readyOrder()
+            scrollBlock()
             return false
         } else {
             alert('Заполните обязательные поля')

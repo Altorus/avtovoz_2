@@ -8279,12 +8279,12 @@ ul.service-menu .children li:last-child {
     overflow: hidden;
     max-height: 0;
     padding: 5px;
-    transition: 0.5s ease-out;
+    transition: 0.7s ease-out;
 }
 
 .form-order.active {
     max-height: 100vh;
-    transition: 0.5s ease-in;
+    transition: 0.7s ease-in;
 }
 
 /*.form-order .btn-custom.outline{*/
