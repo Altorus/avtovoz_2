@@ -8329,6 +8329,11 @@ ul.service-menu .children li:last-child {
     color: red;
 }
 
+.col-md-6 .form-input.warning-inputs, .col-md-4 .form-input.warning-inputs, .modal-body form .form-input.warning-inputs{
+    transition: all .3s ease-in-out;
+    border-bottom: 1px solid red;
+}
+
 
 input[type="radio"] {
     display: none;
