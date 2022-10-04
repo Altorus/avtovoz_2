@@ -687,7 +687,7 @@
     let fromCity = $(".from").val();
     let toCity = $(".to").val();
     let dateShipping = $("#datepicker").val();
-    if (typeAuto !== undefined) {
+    if (typeAuto !== undefined && fromCity != '' && toCity != '' && dateShipping != '') {
       $("#result").html(
         `Вы хотите доставить ${typeAuto} из ${fromCity} в ${toCity}. Желаемая дата отправки-${dateShipping}`
       );
