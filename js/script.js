@@ -697,43 +697,26 @@
   }
 
   $(".ready-order").click(() => {
-    let name = $(".name").val(),
-      phone = $(".phone").val();
-    fromCity = $(".from").val();
-    toCity = $(".to").val();
-    dateShipping = $("#datepicker").val();
-    if (name == "") {
-      $(".name").addClass("warning-inputs");
-    } else {
-      $(".name").removeClass("warning-inputs");
-    }
-    if (phone == "") {
-      $(".phone").addClass("warning-inputs");
-    } else {
-      $(".phone").removeClass("warning-inputs");
-    }
-    if (fromCity == "") {
-      $(".from").addClass("warning-inputs");
-      $("#order-form ul li:nth-of-type(3)").addClass("warning");
-    } else {
-      $(".from").removeClass("warning-inputs");
-      $("#order-form ul li:nth-of-type(3)").remoceClass("warning");
-    }
-    if (toCity == "") {
-      $(".to").addClass("warning-inputs");
-      $("#order-form ul li:nth-of-type(3)").addClass("warning");
-    } else {
-      $(".from").removeClass("warning-inputs");
-      $("#order-form ul li:nth-of-type(3)").remoceClass("warning");
-    }
-    if (dateShipping == "") {
-      $("#datepicker").addClass("warning-inputs");
-      $("#order-form ul li:nth-of-type(3)").addClass("warning");
-    } else {
-      $(".from").removeClass("warning-inputs");
-      $("#order-form ul li:nth-of-type(3)").remoceClass("warning");
+    let data = [
+      $(".name"),
+      $(".phone"),
+      $(".from"),
+      $(".to"),
+      $("#datepicker"),
+    ];
+    for (let i = 0; i < data.length; i++) {
+        validateOrder(data[i])
     }
   });
+
+  function validateOrder(item) {
+    let itemValue = item.val();
+    if (itemValue == "") {
+      item.addClass("warning-inputs");
+    } else {
+      item.removeClass("warning-inputs");
+    }
+  }
 
   $(".name").click(function () {
     $(".name").removeClass("warning-inputs");
